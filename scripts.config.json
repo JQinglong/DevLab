@@ -1,5 +1,5 @@
 {
-    "gameDirName": "Sample",
+    "gameDirName": "DevLab",
     "devDir": "./src/",
     "buildDir": "./docs/",
     "rpgrt": "./bin/Game.rpgproject",

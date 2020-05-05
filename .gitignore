@@ -10,3 +10,5 @@
 !/assets/*.txt
 
 # /docs はデプロイ用に使用する。
+
+SmartDeploy.txt
