@@ -1,4 +1,4 @@
-#RPGツクール リスト表示
+# RPGツクール リスト表示
 
 ## 初めての公開ゲーム
 CSV読み込みのプラグイン
@@ -102,6 +102,8 @@ Firebase か、GitHub Pages か、Netlify か。
 (みんな容量100GBと書いてるけど、本当かな？？Netlify の公式サイト情報が見つからない・・・転送量が月100GB。)
 Firebase か、GitHub Pagesは1GBで、RPGツクールのゲームは結構大きいので、1GBだとちょっと不安な気もして、Netlify としました。
 
+### ちょっとgitの話
+
 githubのリポジトリDevLabを作ります。
 元々、LICENSEファイルも、README.mdも、.gitignoreも準備されているので、特に設定はせずに、作成します。
 この後、いったん別フォルダにクローンして、RPGMV-SmartDeploy-forWEBディレクトリの内容をそのままコピーする、という手順になっていますが、これは何故でしょう？？
@@ -122,15 +124,52 @@ fatal: remote origin already exists.
 ```
 
 へえ。
+こうしておきます。
 
 ```
+git remote rm origin
 git remote add origin https://github.com/JQinglong/DevLab.git
 git remote -v
-
-
 git push -u origin master
+git add -A
+git commit -m " My Update"
+git push
+git status
 ```
 としておきます。
+最初に、git push -u しておくと、その後は、git push でよいというのは今学びました。
+また、clone はその環境のまま持ってくるので、自分のために開発するならリモートリポジトリを切り替えなくてはならず、ただ、ソース管理上は、元の作者さんの修正履歴も残してくれるよと。
+git ももう少しちゃんと勉強しよう・・・
+
+### Netlify へのデプロイ
+
+基本的に手順に従いますが、下記2.が追加になっているようです（元々かな。ちょっと悩みました）。
+1. New site from Git
+2. Only select repositories→リポジトリ選択→Install
+3. Branch to deployはmasterを選択
+4. Build commandはyarn server:deployを入力
+5. Publich directoryはdocsを入力
+6. Deploy site
+
+しかし、失敗。Site deploy failed
+Build command：yarn server:deploy:redecodeも試してみる、とのことなので、そうしてみると成功！
+無事、Netlifyで動作しました。
+Macでもできましたよ！
+
+では、画面をちょっとだけ変えて、反映されるか確認してみます。
+Show Made With MV をfalseにして、Mapにゲートを一つおきました。
+ツクールで保存して、
+
+
+
+
+
+
+
+
+
+
+
 
 
 
