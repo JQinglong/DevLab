@@ -4,6 +4,7 @@
 ## プロジェクト
 /src/*
 !/src/.gitkeep
+!/src/DevLab/js
 ## 素材制作用
 /assets/*
 !/assets/*.md
@@ -12,3 +13,9 @@
 # /docs はデプロイ用に使用する。
 
 SmartDeploy.md
+SmartDeploy2.md
+SmartDeploy3.md
+SmartDeploy4.md
+
+/画像/*
+
